@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IKARO</title>
+    <style>
+        /* Estilos generales */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Estrellas en el fondo */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        h1, h2, h3 {
+            color: #fff;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 15px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Sección de introducción */
+        .intro-section {
+            display: flex;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+
+        .intro-text {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .intro-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .intro-image img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+        }
+
+        /* Sección de animación principal */
+        .main-animation {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .main-animation video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 8px;
+            background: #111;
+        }
+
+        /* Sección de tres videos */
+        .three-videos {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .video-item {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .video-item video {
+            width: 100%;
+            border-radius: 8px;
+            background: #111;
+        }
+
+        /* Cuadrícula de 12 videos */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 1200px) {
+            .video-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .intro-section {
+                flex-direction: column;
+            }
+            .three-videos {
+                flex-direction: column;
+            }
+        }
+
+        .grid-item {
+            text-align: center;
+        }
+
+        .grid-item video {
+            width: 100%;
+            border-radius: 8px;
+            background: #111;
+        }
+
+        .video-description {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #333;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            min-height: 60px;
+        }
+
+        /* Botones de navegación */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .navigation button {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .navigation button:hover {
+            background: #555;
+        }
+
+        /* Estrellas animadas */
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: twinkle 1s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.3;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <h1>IKARO</h1>
+        
+        <!-- Sección de introducción -->
+        <div class="intro-section">
+            <div class="intro-text">
+                <p><h3>Es un joven aventurero amante de la música, desde pequeño creció siendo portador de la Gema del Diseño, con ella logra crear y hacer realidad lo que desee. Su misión es recuperar la armonia del AstroVerso y derrocar a la oscuridad, para eso esta en busca de las Astrogems, capaces de dar poderes y mantener el equilibrio del Universo.</h3></p>
+            </div>
+            <div class="intro-image">
+                <img src="images/IKARO.png" alt="Ikaro">
+            </div>
+        </div>
+        
+        <!-- Sección de animación principal -->
+        <div class="main-animation">
+            <h2>Animación</h2>
+            <video loop autoplay muted>
+                <source src="vids/Animacion40seg.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <!-- Sección de tres videos -->
+        <div class="three-videos">
+            <div class="video-item">
+                <h3>TurnAround</h3>
+                <video loop autoplay muted>
+                    <source src="vids/_360.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-item">
+                <h3>Huesos</h3>
+                <video loop autoplay muted>
+                    <source src="vids/_Huesos.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-item">
+                <h3>Walking</h3>
+                <video loop autoplay muted>
+                    <source src="vids/_Walkin.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        
+        <!-- Cuadrícula de 12 videos -->
+        <div class="video-grid">
+            <!-- Primera fila -->
+            <div class="grid-item">
+                <h3>Estirar y encoger</h3>
+                <video loop autoplay muted>
+                    <source src="vids/Squash.mp4" type="video/mp4">
+                  
+                </video>
+                <div class="video-description">
+                    <p>Busca crear la ilusión de características físicas comprimiendo o estirando.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <h3>Anticipación</h3>
+                <video loop autoplay muted>
+                    <source src="vids/Anticipacion.mp4" type="video/mp4">
+                   
+                </video>
+                <div class="video-description">
+                    <p>Es la preparación para la acción o movimiento principal.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <h3>Puesta en escena</h3>
+                <video loop autoplay muted>
+                    <source src="vids/OnStage.mp4" type="video/mp4">
+                  
+                </video>
+                <div class="video-description">
+                    <p>Dirigir la atención de la audiencia sobre los elementos más importantes en la escena.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <h3>Animación directa y pose a pose</h3>
+                <video loop autoplay muted>
+                    <source src="vids/PoseaPose.mp4" type="video/mp4">
+                   
+                </video>
+                <div class="video-description">
+                    <p>Esta técnica permite aumentar el efecto dramático del movimiento.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <h3>Acciones complementarias y superpuestas</h3>
+                <video loop autoplay muted>
+                    <source src="vids/Compysup.mp4" type="video/mp4">                  
+                </video>
+                <div class="video-description">
+                    <p>Cuando un personaje u objeto tiende a detenerse, no todo lo que está asociado a él se detiene.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <h3>Acelerar y desacelerar</h3>
+                <video loop autoplay muted>
+                    <source src="vids/FastSlow.mp4" type="video/mp4">
+                  
+                </video>
+                <div class="video-description">
+                    <p>Ningún objeto pasa del reposo absoluto al movimiento continuo instantáneamente.</p>
+                </div>
+            </div>
+            
+            <!-- Segunda fila -->
+            <div class="grid-item">
+                <h3>Arcos</h3>
+                <video loop autoplay muted>
+                    <source src="vids/Arcos.mp4" type="video/mp4">
+                
+                </video>
+                <div class="video-description">
+                    <p>Casi todos los objetos, se mueven en trayectorias circulares más que en línea recta.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <h3>Acción secundaria</h3>
+                <video loop autoplay muted>
+                    <source src="vids/AccionSecundaria.mp4" type="video/mp4">
+                </video>
+                <div class="video-description">
+                    <p>Todos los gestos que son agregados a la acción principal o primaria son llamados acciones secundarias.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <h3>Timing</h3>
+                <video loop autoplay muted>
+                    <source src="vids/Timing.mp4" type="video/mp4">
+                </video>
+                <div class="video-description">
+                    <p>Cada movimiento puede ser dividido en múltiples fracciones de tiempo.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <h3>Exageración</h3>
+                <video loop autoplay muted>
+                    <source src="vids/Exageracion.mp4" type="video/mp4">
+                </video>
+                <div class="video-description">
+                    <p>Exagerar un poco, agregar elementos surreales e inesperados pueden darle un estilo único a la animación.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <h3>Dibujo sólido</h3>
+                <video loop autoplay muted>
+                    <source src="vids/_360.mp4" type="video/mp4">
+                </video>
+                <div class="video-description">
+                    <p>Representación tridimensional de elementos en la escena.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <h3>Atractivo</h3>
+                <video loop autoplay muted>
+                    <source src="vids/OnStage.mp4" type="video/mp4">
+                </video>
+                <div class="video-description">
+                    <p>La audiencia tiende a recordar a los personajes que perciben únicos y reales.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botones de navegación -->
+        <div class="navigation">
+            <button id="btnHistoria">
+               <img src="images/FichaTecnicaIKARO.jpg" width="500px"> Historia</button>
+            <button id="btnTemplate">
+               <img src="images/Template.jpg" width="500px">Template</button>
+        </div>
+    </div>
+
+    <script>
+        // Crear estrellas en el fondo
+        document.addEventListener('DOMContentLoaded', function() {
+            const starsContainer = document.getElementById('stars');
+            const numberOfStars = 200;
+            
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Tamaño aleatorio entre 1 y 3 píxeles
+                const size = Math.random() * 2 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                
+                // Posición aleatoria
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                
+                // Tiempo de animación aleatorio
+                star.style.animationDuration = (Math.random() * 3 + 1) + 's';
+                
+                starsContainer.appendChild(star);
+            }
+            
+            // Funcionalidad para los botones (puedes expandir esto según necesites)
+            document.getElementById('btnHistoria').addEventListener('click', function() {
+                alert('Ir a la sección de Historia');
+                // Aquí puedes redirigir a otra página o mostrar un modal
+            });
+            
+            document.getElementById('btnTemplate').addEventListener('click', function() {
+                alert('Ir a la sección de Template');
+                // Aquí puedes redirigir a otra página o mostrar un modal
+            });
+        });
+    </script>
+</body>
+</html>
